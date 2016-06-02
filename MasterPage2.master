@@ -1,0 +1,646 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+<title>Pacibook</title>
+
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="lib/jquery-1.8.0.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.0"></script>
+	<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.0" media="screen" />
+
+	<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-buttons.css?v=1.0.3" />
+	<script type="text/javascript" src="../source/helpers/jquery.fancybox-buttons.js?v=1.0.3"></script>
+    <link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-thumbs.css?v=1.0.6" />
+	<script type="text/javascript" src="../source/helpers/jquery.fancybox-thumbs.js?v=1.0.6"></script>
+
+    <script type="text/javascript">
+        $('.fancybox').fancybox();
+
+        $('.fancybox-buttons').fancybox({
+            openEffect: 'elastic',
+            closeEffect: 'elastic',
+
+            prevEffect: 'elastic',
+            nextEffect: 'elastic',
+
+            closeBtn: false,
+
+            helpers: {
+                title: {
+                    type: 'inside'
+                },
+                buttons: {}
+            },
+
+            afterLoad: function () {
+                this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+            }
+        });
+    </script>
+	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+	</style>
+	
+	
+	
+
+ 
+<!--[if IE 6]>
+
+	<link rel="stylesheet" type="text/css" href="css/style6.css" />
+
+<![endif]-->
+
+    <!--[if IE 7]>
+
+        <link href="css/style7.css" rel="stylesheet" type="text/css">
+
+    <![endif]-->
+
+      
+<style type="text/css"> 
+
+ 
+
+    /* Design by Studio7designs.com */
+
+ 
+
+ /*
+
+  USAGE:
+
+  Copy and paste this one line into your site's CSS stylesheet.
+
+  Add comma-separated CSS selectors / element names that have transparent PNGs.
+
+  The path to the HTC is relative to the HTML file that includes it.
+
+  See below for another method of activating the script without adding CSS here.
+
+ */
+
+ 
+
+ img, div, input { behavior: url("iepngfix.htc") }
+
+    .style2
+    {
+        color: #5c3315;
+        line-height: 50px;
+        text-transform: uppercase;
+        height: 52px;
+        border-bottom: 1px dashed #b7b4a3;
+        width: 280px;
+        margin-left: 15px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        font-size: x-small;
+        font-family: Tahoma, Geneva, sans-serif;
+        text-align: center;
+    }
+    .style3
+    {
+        font-size: medium;
+    }
+    .style4
+    {
+        width: 100%;
+        height: 20px;
+    }
+
+    .style5
+    {
+        text-align: center;
+    }
+
+    .style6
+    {
+        width: 119px;
+    }
+
+    .style7
+    {
+        width: 255px;
+    }
+
+</style>
+
+
+     <script type="text/javascript">
+
+         function ExpandCollapse() {
+             var collPanel = $find("CollapsiblePanelExtender1");
+             if (collPanel.get_Collapsed())
+                 collPanel.set_Collapsed(false);
+             else
+                 collPanel.set_Collapsed(true);
+         }      
+ 
+    </script>
+
+
+<link rel="stylesheet" href="./cupertino/jquery.ui.all.css" type="text/css">
+
+<style type="text/css">
+
+#Button1
+
+{
+
+   color: #000000;
+
+   font-family: Arial;
+
+   font-size: 13px;
+
+}
+
+.ui-dialog
+
+{
+
+   padding: 4px 4px 4px 4px;
+
+}
+
+.ui-dialog .ui-dialog-title
+
+{
+
+   font-family: Arial;
+
+   font-size: 21px;
+
+   font-weight: bold;
+
+   font-style: normal;
+
+   color: #2779AA;
+
+}
+
+.ui-dialog .ui-dialog-titlebar
+
+{
+
+   padding: 10px 10px 10px 30px;
+
+}
+
+.ui-dialog .ui-dialog-titlebar-close
+
+{
+
+   right: 10px;
+
+}
+
+</style>
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+<!--
+    function ShowObject(id, flag) {
+        var elem = document.getElementById(id);
+        if (elem)
+            elem.style.visibility = flag ? 'visible' : 'hidden';
+    }
+
+//-->
+
+</script>
+<script type="text/javascript">
+function closePanel(){$find("collapsed")._doClose();
+}
+
+function openPanel(){
+
+$find("collapsed")._doOpen();
+}
+
+</script>
+    <script type="text/javascript" src="js/jscript.js"></script>
+    <link rel="stylesheet" type="text/css" href="upload/styles.css">
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+<!--wrapper starts-->
+
+<div id="wrapper">
+
+	<!--container starts-->
+
+    	<div id="container">
+
+        	<!--ltcontent starts-->
+
+        	<div id="ltcontent">
+
+            	<!--hdlogo starts-->
+
+                <div id="hdlogo" align="center" >
+                
+                    <asp:ImageButton ID="ImageButton1" runat="server" height="300px" width="250px" 
+                        />
+
+                    <br />
+                    <br />
+                    <div class="btn-sign">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="#" id="button">Change profile picture</a>
+                </div>
+                 </div>
+                <!--hdlogo ends-->
+
+                <!--about starts-->
+
+               <div id="about">
+
+                	<div class="style2" align="center"><span class="tphead"><span class="style3">
+                        <strong>About Me</span></span></div>
+
+                    <div class="ltdetail">
+
+                        <table align="center" class="style4">
+                            <tr>
+                                <td class="style5">
+                                    <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click">Profile</asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style5">
+                                    <asp:LinkButton ID="LinkButton3" runat="server" onclick="LinkButton3_Click">Photos</asp:LinkButton>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="style5">
+                                    <asp:LinkButton ID="LinkButton5" runat="server" onclick="LinkButton5_Click" >Wall</asp:LinkButton>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                </div>            
+
+                <!--about ends--> 
+
+				 <div class="ltgap"></div>
+
+                <!--popular starts-->
+
+                	<div id="mostpop">
+
+                	<div class="lthead"><span></span></div>
+
+                    <!--ltposts starts-->
+
+                    <div class="ltposts">
+
+                    <ul>
+
+                        <li><a href="#"></a></li>
+
+                        <li><a href="#"></a></li>
+
+                        <li><a href="#"></a></li>
+
+                        <li><a href="#"></a></li>
+
+                        <li><a href="#"></a></li>
+
+                    </ul>
+
+                    </div>
+
+                    <!--ltposts ends-->
+
+                    <!--rtposts starts-->
+
+                    <div class="rtposts">
+
+                    <ul>
+
+                    <li><a href="#"></a></li>
+
+                    <li><a href="#"></a></li>
+
+                    <li><a href="#"></a></li>
+
+                    <li><a href="#"></a></li>
+
+                    <li><a href="#"></a></li>
+
+                    </ul>
+
+                    </div>
+
+                    <!--rtposts ends-->
+
+                    <div class="clear"></div>
+
+                </div>
+
+                <!--popular ends-->  
+
+                 <div class="ltgap"></div>
+
+                 <!-- search starts-->
+
+                 <div id="search">
+
+                 	<div class="input">
+
+                 	&nbsp;
+
+                    </div>
+
+                 </div>
+
+                 <!--search ends-->
+
+                 <div class="ltgap"></div>
+
+                 <!--about starts-->
+
+                <div id="feeds">
+
+                	<div class="lthead" align="center"><span class="tphead"></span></div>
+
+                    <div class="ltdetail">
+
+                    <ul>
+
+                    	<li><a href="#"></a></li>
+
+						<li><a href="#"></a></li>
+
+                    </ul>
+
+                    </div>
+
+                </div>             
+
+                <!--about ends--> 
+
+                 <div class="ltgap"></div>
+
+                <!--about starts-->
+
+                <div id="social">
+
+                	<div class="lthead"><span>my social networks</span></div>
+
+                    <div>
+
+
+                    </div>
+
+                </div>             
+
+                <!--about ends--> 
+
+            </div>
+
+            <!--ltcontent ends-->
+
+            <!--rtcontent starts-->
+
+            <div id="rtcontent">
+
+           		<!--publish starts-->
+
+                <div class="publish">
+                    <table class="style4">
+                        <tr>
+                            <td class="style7">
+                                Welcome
+                                <asp:Literal ID="Literal2" runat="server" ></asp:Literal>
+                            </td>
+                            <td class="style6">
+                                &nbsp;</td>
+                            <td>
+                        <strong>
+
+                 	            &nbsp;&nbsp;
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--publish ends-->
+
+                <!--head starts-->
+
+                <div class="head">PaciBook&nbsp;<asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager> </div>
+
+                <!--head ends-->
+
+                <!--tagln starts-->
+
+                <div class="tagln">
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <br />
+
+                    
+
+                </div>
+
+                <!--tagln ends-->
+
+                <!--menulinks starts -->
+
+                <div id="menulinks">
+
+	            	<ul>
+
+    	    	        <li><a href="forum.aspx">Forum</a></li>
+
+    		            <li><a href="Info_settings.aspx">Profile</a></li>
+                        
+                        <li><a href="Account1.aspx">Account</a></li>
+
+	        	        
+
+                	    <li><a href="Default2.aspx">Log Out</a></li>
+
+	                </ul>
+
+    	        </div>
+
+                <div class="clear">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+            <!--menulinks ends -->
+
+            <!--documentarty starts-->
+
+                
+
+            <!--documentary ends-->
+
+            <div class="gap">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+                </div>
+
+            <!--Video starts-->
+
+            <!--Video ends-->
+
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                </asp:ContentPlaceHolder>
+                </div>
+
+            <!--Helping starts-->
+
+            <!--Helping ends-->
+
+            </div>
+
+            <!--rtcontent ends-->
+
+            <div class="clear"></div>
+
+            <br />
+
+            <!--feature starts-->
+
+            <div id="features">
+
+            	<div id="tranbox">
+
+                	<div class="tranhead">
+
+                </div>
+
+                
+
+                <div class="clear">
+                    <br />
+                    </div>
+
+            </div>
+
+            <!--features ends-->
+
+            <!--footer starts-->
+
+            	<div id="footer">
+
+                	<div class="copy">
+
+                    © 2012 Social networking website</div>
+
+                    <div class="flinks">
+
+                    	<span><a href="#">HOME</a></span><span class="separator">  </span>
+
+                        <span><a href="#">ABOUT</a></span><span class="separator">  </span>
+
+                        <span><a href="#"></a></span><span class="separator">  </span>
+
+                        <span><a href="#"></a></span><span class="separator">  </span>
+
+                        <span><a href="#"></a></span><span class="separator">  </span>
+
+                        <span><a href=""></a></span>
+
+                    </div>
+
+                </div>
+
+            <!--footer ends-->
+
+        </div>
+
+    <!--container starts-->
+
+</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="upload/jquery.reveal.js"></script>
+
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        $('#button').click(function (e) { // Button which will activate our modal
+	            $('#modal').reveal({ // The item which will be opened with reveal
+	                animation: 'fade',                   // fade, fadeAndPop, none
+	                animationspeed: 600,                       // how fast animtions are
+	                closeonbackgroundclick: true,              // if you click background will modal close?
+	                dismissmodalclass: 'close'    // the class of a button or element that will close an open modal
+	            });
+	            return false;
+	        });
+	    });
+	</script>
+    
+    
+   
+    <div id="modal">
+	<div id="heading">
+		Change your profile picture
+	</div>
+
+	<div id="content">
+
+    <br />
+    <br />
+    
+            <a>Please select the File to Upload</a>
+          
+            <div>
+                <asp:FileUpload ID="Fileuploadcontrol1" runat="server" />
+            </div>
+            <br />
+            <br />
+             
+            <asp:ImageButton ID="imagebuttonupload" runat="server" ImageUrl="~/images/submit-button-blue-hover.png"  OnClick ="imagebuttonupload_Click"></asp:ImageButton>
+           <br />
+           <br />
+          
+            <asp:Label ID="labelupload" runat="server">
+           
+            </asp:Label>
+		
+	</div>
+</div>
+
+<!--wrapper ends-->
+
+    </form>
+    
+
+</body>
+
+</html>
+
+
